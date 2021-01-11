@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<head>
+  <title>購物車動畫範例</title>
+  <link href="style.css" rel="stylesheet" type="text/css">
+  <script src="https://code.jquery.com/jquery-1.12.3.min.js" integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ=" crossorigin="anonymous"></script>
+</head>
+<body class="basket">
+  <header>
+    <h1>運動衣購物頁面</h1>
+    <div class="basket-icon"><img src="img/basket.png"></div>
+  </header>
+  <ul class="products">
+    <li>
+      <img src="img/t-1.jpg">
+      <h2>Green T-Shirt</h2>
+      <button>加入購物車</button>
+    </li>
+    <li>
+      <img src="img/t-2.jpg">
+      <h2>Yellow T-Shirt</h2>
+      <button>加入購物車</button>
+    </li>
+    <li>
+      <img src="img/t-3.jpg">
+      <h2>Pink T-Shirt</h2>
+      <button>加入購物車</button>
+    </li>
+    <li>
+      <img src="img/t-1.jpg">
+      <h2>Green T-Shirt</h2>
+      <button>加入購物車</button>
+    </li>
+    <li>
+      <img src="img/t-2.jpg">
+      <h2>Yellow T-Shirt</h2>
+      <button>加入購物車</button>
+    </li>
+    <li>
+      <img src="img/t-3.jpg">
+      <h2>Pink T-Shirt</h2>
+      <button>加入購物車</button>
+    </li>
+  </ul>
+  <script>
+    $("button").on("click",function(){
+      $(this).closest("li")               //尋找li中的子元素
+      .find("img")                     //找到img標籤
+      .clone()                        //複製
+      .addClass("zoom")              //為這img標籤加入一個zoom class名稱
+      .appendTo("body");             //加到body標籤
+    setTimeout(function(){$(".zoom").remove();}
+    ,1000);
+    })
+    
+  </script>
+</body>
